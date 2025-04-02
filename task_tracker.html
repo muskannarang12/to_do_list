@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Tracker</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background: linear-gradient(45deg, #ffd00098, rgba(78, 37, 190, 0.863), rgba(255, 0, 0, 0.549));
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .task-tracker {
+            width: 100%;
+            max-width: 540px;
+            background-color: rgb(255, 255, 255);
+            padding: 40px 30px 70px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .todo-app h2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        h2 img {
+            height: 30px;
+            width: 30px;
+            margin-left: 10px;
+        }
+        
+        .row {
+            margin-top: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #edeef0;
+            border-radius: 30px;
+            padding-left: 20px;
+            margin-bottom: 25px;
+        }
+        
+        input {
+            flex: 1;
+            border: none;
+            outline: none;
+            background: transparent;
+            padding: 10px;
+            font-weight: 14px;
+        }
+        
+        button {
+            border: none;
+            outline: none;
+            padding: 16px 40px;
+            background: linear-gradient(45deg, yellow, rgb(244, 151, 230));
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 40px;
+        }
+        
+        button:hover {
+            background: linear-gradient(45deg, rgb(48, 70, 147), yellow);
+        }
+        
+        ul li {
+            list-style: none;
+            font-size: 17px;
+            padding: 15.5px 8px 12px 50px;
+            user-select: none;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        ul li::before {
+            content: "";
+            position: absolute;
+            height: 28px;
+            width: 28px;
+            border-radius: 50%;
+            background-image: url(images/unchecked.png);
+            background-size: cover;
+            background-position: center;
+            top: 12px;
+            left: 8px;
+        }
+        
+        ul li.checked {
+            color: #555;
+            text-decoration: line-through;
+        }
+        
+        ul li.checked::before {
+            background-image: url(images/checked.png);
+        }
+        
+        ul li span {
+            position: absolute;
+            right: 0;
+            top: 5px;
+            width: 40px;
+            height: 40px;
+            font-size: 22px;
+            color: #555;
+            line-height: 40px;
+            text-align: center;
+            border-radius: 50px;
+        }
+        
+        ul li span:hover {
+            background: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="task-tracker">
+            <div class="todo-app">
+                <h2>Task Tracker <img src="images.jpg" alt="icon"></h2>
+                <div class="row">
+                    <input type="text" id="input-box" placeholder="Add your text">
+                    <button onclick="addTask()">Add</button>
+                </div>
+                <ul id="list-container">
+                    <!-- Tasks will appear here -->
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="task_tracer.js"></script>
+</body>
+</html>
